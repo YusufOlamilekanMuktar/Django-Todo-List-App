@@ -1,0 +1,27 @@
+{% extends 'base/main.html' %} {% block header %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<div class="container">
+    <div class="header-bar">
+        <h3>{{title}}</h3>
+    </div>
+
+    {% endblock header %}{% block content %}
+
+    <div class="task-items-wrapper">
+        <form class="form2" method="POST" action="">
+            {% csrf_token %}
+            <p style="color: white">Title</p>
+            {{form.title}} <br />
+            <p style="color: white">Description</p>
+            {{form.description}} <br /> {{form.complete.label}} {{form.complete}} <br />
+            <input class="button" type="submit" value="Submit" />
+        </form>
+
+        {{form.errors}}
+    </div>
+
+    {% endblock content %}
+</div>

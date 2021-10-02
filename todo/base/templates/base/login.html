@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %} {% block header %}
+<div class="header-bar">
+    <h1>Todo List App</h1>
+    <p>Login</p>
+</div>
+
+<div class="container">
+
+    {% endblock header %}{% block content %}
+
+    <form class="form" method="POST">
+        <h3>Welcome</h3>
+        {% csrf_token %} {{form.username}} <br> {{form.password}} <br>
+        <input type="submit" value="Login"><br>
+        <p style="font-size: 10px;">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </form>
+
+    {% endblock content %}

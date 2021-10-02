@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Todo-list made by Muktar">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To Do Items</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+</head>
+
+<body>
+    {% block header %} {% endblock header %} {% block content %} {% endblock content %} {% block drops %}
+    <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+    </div>
+    {% endblock drops %}
+
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#id_username").attr('placeholder', '{{form.username.label}}');
+            $("#id_password").attr('placeholder', '{{form.password.label}}');
+            $("#id_password1").attr('placeholder', 'Enter Password');
+            $("#id_password2").attr('placeholder', 'Confirm Password');
+            $("#id_title").attr('placeholder', 'Enter Title');
+            $("#id_description").attr('placeholder', 'Enter Description');
+        });
+    </script>
+</body>
+
+
+</html>
